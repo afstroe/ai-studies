@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Doxygen class comment</Title>
+      <Author>
+      </Author>
+      <Description>Template for doxygen style class description</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>dclass</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="cpp" Delimiter="$">
+        <![CDATA[
+/*! \class $ClassName$
+  * \brief $ClassBrief$.
+  * 
+  * $ClassDetails$
+  *
+  * $ClassTemplateDetails$
+  */
+        ]]>
+      </Code>
+      <Declarations>
+        <Literal>
+          <ID>ClassName</ID>
+          <ToolTip>Choose the class name.</ToolTip>
+          <Default>ClassName</Default>
+        </Literal>
+        <Literal>
+          <ID>IncludeFile</ID>
+          <ToolTip>Choose the header file.</ToolTip>
+          <Default>IncludeFile</Default>
+        </Literal>
+        <Literal>
+          <ID>ClassBrief</ID>
+          <ToolTip>Write a brief for the class.</ToolTip>
+          <Default>brief</Default>
+        </Literal>
+        <Literal>
+          <ID>ClassDetails</ID>
+          <ToolTip>Write detailed description for the class.</ToolTip>
+          <Default>ClassDetails</Default>
+        </Literal>
+        <Literal>
+          <ID>ClassTemplateDetails</ID>
+          <ToolTip>Describe a template parameter for the class.</ToolTip>
+          <Default>\tparam </Default>
+        </Literal>
+        <Literal>
+          <ID>Ingroup</ID>
+          <ToolTip>Enter the group.</ToolTip>
+          <Default>\ingroup</Default>
+        </Literal>
+      </Declarations> 
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

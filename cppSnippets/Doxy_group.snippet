@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Doxygen member comment</Title>
+      <Author>
+      </Author>
+      <Description>Template for doxygen style finction description</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>dgroup</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="cpp" Delimiter="$">
+        <![CDATA[/*! \defgroup $Group$ $Description$ */]]>
+      </Code>
+      <Declarations>
+        <Literal>
+          <ID>Group</ID>
+          <ToolTip>Enter the group name.</ToolTip>
+          <Default>GroupName</Default>
+        </Literal>
+        <Literal>
+          <ID>Description</ID>
+          <ToolTip>Enter the group description.</ToolTip>
+          <Default>GroupDescription</Default>
+        </Literal>
+      </Declarations> 
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

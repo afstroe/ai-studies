@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Doxygen function comment</Title>
+      <Author>
+      </Author>
+      <Description>Template for doxygen style finction description</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>dfunction</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="cpp" Delimiter="$">
+        <![CDATA[
+/*!
+  * \brief $Brief$
+  * $Description$
+  * \tparam $TParam$
+  *
+  * \param $Param$
+  *
+  * \return $Return$
+  * \ingroup $Ingroup$  
+  */
+        ]]>
+      </Code>
+      <Declarations>
+        <Literal>
+          <ID>Brief</ID>
+          <ToolTip>Enter the brief description.</ToolTip>
+          <Default>Brief</Default>
+        </Literal>
+        <Literal>
+          <ID>Description</ID>
+          <ToolTip>Enter a function description.</ToolTip>
+          <Default>Description</Default>
+        </Literal>
+        <Literal>
+          <ID>TParam</ID>
+          <ToolTip>Enter the first template parameter.</ToolTip>
+          <Default>tparam</Default>
+        </Literal>
+        <Literal>
+          <ID>Param</ID>
+          <ToolTip>Enter the first parameter.</ToolTip>
+          <Default>param</Default>
+        </Literal>
+        <Literal>
+          <ID>Return</ID>
+          <ToolTip>Enter the function return.</ToolTip>
+          <Default>return</Default>
+        </Literal>
+        <Literal>
+          <ID>Ingroup</ID>
+          <ToolTip>Enter the group.</ToolTip>
+          <Default>ingroup</Default>
+        </Literal>
+      </Declarations> 
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
