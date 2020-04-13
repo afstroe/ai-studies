@@ -17,9 +17,9 @@ namespace statistics
   /*!
     * \brief Function to measure the time needed to perform a function
     *
-    * \tparam Tye
+    * \tparam FunctionType - type of the function to be timed
     *
-    * \param FunctionType - type of the function to be timed
+    * \param function - pointer to the function to be timed
     *
     * \return the time (in milliseconds) needed to perform the function
     * \ingroup statistics

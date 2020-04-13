@@ -9,9 +9,19 @@
 
 #include <xmemory>
 
+/*! \defgroup iterative Non-smart iterative methods - for benchmarks */
 namespace iterative
 {
-  // iteratively looks for the min element in a std::vector
+  /*!
+  * \brief Iterative algorithm to look for the smallest element of a std::vector
+  * \tparam Type - the type of the elements inside the vector
+  * \tparam Container - the vector type
+  *
+  * \param container - the vector for which we require the minimum
+  *
+  * \return the smallest element inside the vector
+  * \ingroup iterative
+  */
   template <class Type, template <class, class> class Container>
   Type min(const Container<Type, std::allocator<Type>>& container)
   {
@@ -24,7 +34,16 @@ namespace iterative
     return min;
   }
 
-  // iteratively looks for the max element in the std::vector
+  /*!
+  * \brief Iterative algorithm to look for the largest element of a std::vector
+  * \tparam Type - the type of the elements inside the vector
+  * \tparam Container - the vector type
+  *
+  * \param container - the vector for which we require the maximum
+  *
+  * \return the largest element inside the vector
+  * \ingroup iterative
+  */
   template <class Type, template <class, class> class Container>
   Type max(const Container<Type, std::allocator<Type>>& container)
   {
