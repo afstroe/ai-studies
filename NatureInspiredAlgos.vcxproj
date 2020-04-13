@@ -20,7 +20,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\random_generators\vectorGenerator.cpp" />
     <ClCompile Include="src\stochastic\RandomSearch.cpp" />
   </ItemGroup>
   <ItemGroup>
