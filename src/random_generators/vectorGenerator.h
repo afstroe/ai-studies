@@ -122,6 +122,7 @@ namespace randomGenerators
     * Creating the random engine every time it's needed can be an expensive proposition.
     * Use this to get a default random engine.
     *
+    * \ingroup randomGenerators
     */
   class DefaultRandomEngine
   {
@@ -151,25 +152,49 @@ namespace randomGenerators
   /*!
     * \brief Creates an uniform distributed random set of numbers.
     *
-    * \tparam Type: the type of the numbers to populate the container
-    * \tparam TypeType: the numbers sub-type.
-    * \tparam Container: the container type to be filled - std::vector<Type>
-    * \param size: the number of random numbers to be created
-    * \param min: the smallest random number possible
-    * \param max: the largest random number possible
+    * \tparam Type: the type of the numbers to populate the container;
+    * \tparam TypeType: the numbers sub-type;
+    * \tparam Container: the container type to be filled - std::vector<Type>;
+    * \param size: the number of random numbers to be created;
+    * \param min: the smallest random number possible;
+    * \param max: the largest random number possible;
+    * \ingroup randomGenerators
     */
   template <class Type, class TypeType, template <class, class> class Container>
   Container<Type, std::allocator<Type>> generateUniformRandomContainer(size_t size, Type min, Type max)
   {
     auto& randomEngine = DefaultRandomEngine::get();
-    Container<Type, std::allocator<Type>> vect(size);
+    static Container<Type, std::allocator<Type>> vect;
+    vect.clear();
+    vect.reserve(size);
     UniformDistributedGenerator<Type, TypeType> generate(min, max);
     for (int i = 0; i < size; ++i)
     {
-      vect[i] = generate(randomEngine);
+      vect.push_back(generate(randomEngine));
     }
 
     return vect;
+  }
+
+
+  /*!
+    * \brief Generates an uniform distributed random number.
+    * The number will be randomly generated inside the give interval.
+    * \tparam Type - the number type;
+    * \tparam SubType - the type of type;
+    *
+    * \param min - the smallest part of the interval;
+    * \param max - the biggest part of the interval;
+    *
+    * \return the random number;
+    * \ingroup randomGenerators
+    */
+  template <typename Type, typename SubType = Type>
+  Type generateUniformDistributedRandomNumber(Type min, Type max)
+  {
+    auto& randomEngine = DefaultRandomEngine::get();
+    UniformDistributedGenerator<Type, SubType> generate(min, max);
+    return generate(randomEngine);
   }
 
 

@@ -41,19 +41,39 @@ namespace stochastic
 
 		/*!
 			* \brief init c-tor
+			*	\param left - the smallest part of the search space
+			*	\param right - the biggest part of the search space
 			*/
 		SearchSpace2D(const Type& left, const Type& right)
 		{
-			_left = left;
-			_right = right;
+			if (left < right)
+			{
+				_left = left;
+				_right = right;
+			}
+			else
+			{
+				_left = right;
+				_right = left;
+			}
 		}
 
+		/*!
+			* \brief grow c-tor
+			* \param seed - the initial search space
+			* \param growFactor - factor to grow the search space
+			*/
+		SearchSpace2D(const SearchSpace2D& seed, const Type& growFactor):
+			SearchSpace2D(seed.left() - growFactor, seed.right() + growFactor)
+		{
+			;
+		}
 
 		/*!
 			* \brief retrieves the length of the search space
 			* \return the search space length
 			*/
-		inline Type length()
+		inline Type length() const
 		{
 			return std::abs(_right - _left);
 		}
@@ -66,6 +86,24 @@ namespace stochastic
 		inline Type& left()
 		{
 			return _left;
+		}
+
+		/*!
+			* \brief retrieves the left hand side (the smallest number) of the search space
+			* \return the left hand side (the smallest number) of the search space
+			*/
+		inline const Type& left() const
+		{
+			return _left;
+		}
+
+		/*!
+			* \brief retrieves the right hand side (the biggest number) of the search space
+			* \return the right hand side (the biggest number) of the search space
+			*/
+		inline const Type& right() const
+		{
+			return _right;
 		}
 
 		/*!
@@ -89,6 +127,7 @@ namespace stochastic
 	* \param searchSpace: the search space into which we generate
 	*
 	* \return the generated vector
+	* \ingroup stochastic
 	*/
 	template <class Type, template <class> class SearchSpace>
 	std::vector<Type> randomGeneration2D(size_t problemSize, SearchSpace<Type> searchSpace)

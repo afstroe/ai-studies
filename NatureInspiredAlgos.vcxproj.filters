@@ -21,6 +21,9 @@
     <ClCompile Include="src\stochastic\RandomSearch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\stochastic\AdaptiveRandomSearch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\iterative\IterativeMinMax.h">
@@ -33,6 +36,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\statistics\clock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stochastic\AdaptiveRandomSearch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\Defines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -7,7 +7,8 @@ void stochastic::randomSearchTest()
 
   for (int ite = 0; ite < 10; ++ite)
   {
-    statistics::clock(
+    statistics::clock
+    (
       [&randomSearchOptimal]() {
         randomSearchOptimal = stochastic::randomSearch(
           std::numeric_limits<double>::max(),                                   // initial optimal                          
@@ -23,17 +24,18 @@ void stochastic::randomSearchTest()
 
             return sum;
           },
-          stochastic::randomGeneration2D<double, stochastic::SearchSpace2D>,    // random Ox samples generator
-            [](double oldOptimal, double valueToCheck) {                        // cost comparator function
+          stochastic::randomGeneration2D<double, stochastic::SearchSpace2D>,    // random samples generator
+          [](double oldOptimal, double valueToCheck) {                          // cost comparator function
             return valueToCheck < oldOptimal;
           }
-          );
+        );
       },
       "Random search time"
-        );
+    );
 
     double iterativeOptimal = std::numeric_limits<double>::max();
-    statistics::clock(
+    statistics::clock
+    (
       [&iterativeOptimal]() {
         for (double x2 = -5; x2 < 5; x2 += 0.1)
         {
@@ -54,7 +56,7 @@ void stochastic::randomSearchTest()
         }
       },
       "Iterative solution time"
-        );
+    );
 
 
     std::cout << "random search optimal is: " << randomSearchOptimal << std::endl;

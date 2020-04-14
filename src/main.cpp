@@ -5,6 +5,7 @@
 #include <chrono>
 
 #include "stochastic/RandomSearch.h"
+#include "stochastic/AdaptiveRandomSearch.h"
 #include "iterative/IterativeMinMax.h"
 #include "random_generators/vectorGenerator.h"
 #include "statistics/clock.h"
@@ -22,7 +23,9 @@ static double randomSolution(const std::vector<double>& problemSpace)
 
 int main(int argc, TCHAR** a)
 {
-  stochastic::randomSearchTest();
+  //stochastic::randomSearchTest();
+
+  stochastic::unitTest::adaptiveRandomSearch();
 
   return 0;
 }
