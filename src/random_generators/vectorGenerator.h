@@ -164,8 +164,8 @@ namespace randomGenerators
   Container<Type, std::allocator<Type>> generateUniformRandomContainer(size_t size, Type min, Type max)
   {
     auto& randomEngine = DefaultRandomEngine::get();
-    static Container<Type, std::allocator<Type>> vect;
-    vect.clear();
+    Container<Type, std::allocator<Type>> vect;
+    // vect.clear();
     vect.reserve(size);
     UniformDistributedGenerator<Type, TypeType> generate(min, max);
     for (int i = 0; i < size; ++i)
