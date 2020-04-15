@@ -27,13 +27,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\iterative\IterativeMinMax.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\statistics\benchmark.cpp" />
     <ClCompile Include="src\stochastic\AdaptiveRandomSearch.cpp" />
     <ClCompile Include="src\stochastic\RandomSearch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\iterative\IterativeMinMax.h" />
     <ClInclude Include="src\random_generators\vectorGenerator.h" />
+    <ClInclude Include="src\statistics\benchmark.h" />
     <ClInclude Include="src\statistics\clock.h" />
     <ClInclude Include="src\stochastic\AdaptiveRandomSearch.h" />
     <ClInclude Include="src\stochastic\RandomSearch.h" />

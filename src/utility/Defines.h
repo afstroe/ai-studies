@@ -1,3 +1,9 @@
+// implementation: Alin Stroe
+// mail to: afstroe@gmail.com
+// linkedin: https://www.linkedin.com/in/alinstroe/
+// purpose: useful common definitions
+// Copyright © 2020 Alin Stroe, all rights reserved
+
 #ifndef __DEFINES_H__
 #define __DEFINES_H__
 
@@ -21,6 +27,9 @@
     \return a constant reference to _##NAME <br>            \
     */                                                      \
   const TYPE& NAME() const { return _##NAME; }
+
+static const size_t BENCHMARK_ITERATIONS = 1000;
+static const size_t BENCHMARK_PROBLEM_SIZE = 2;
 
 #endif // !__DEFINES_H__
 

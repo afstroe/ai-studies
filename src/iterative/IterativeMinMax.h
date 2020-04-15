@@ -8,6 +8,9 @@
 #define __ITERATIVE_MIN_MAX_H__
 
 #include <xmemory>
+#include <functional>
+
+#include "../utility/Defines.h"
 
 /*! \defgroup iterative Non-smart iterative methods - for benchmarks */
 namespace iterative
@@ -56,6 +59,61 @@ namespace iterative
     return max;
   }
 
+
+  /*!
+    * \brief Iteratively computes the optima for the given objective function    
+    * \tparam Type - the data type used by the algorithm
+    * \tparam SearchSpace - the search space type
+    * \tparam ObjectiveFunction - the objective function type
+    * \tparam CostEvalFunction - the cost function type
+    *
+    * \param initialOptima - initial value for the optima
+    * \param problemSize - size of the parameters vector
+    * \param searchSpace - the search space
+    * \param objectiveFunction - the function we want to optimize
+    * \param costEvalFunction - the function we use to evaluate the cost
+    *
+    * \return the optima
+    * \ingroup iterative
+    */
+  template <typename Type, template <class> class SearchSpace, class ObjectiveFunction, class CostEvalFunction>
+  Type optima(Type initialOptima, size_t problemSize, SearchSpace<Type> searchSpace, ObjectiveFunction objectiveFunction, CostEvalFunction costEvalFunction)
+  {
+    std::vector<Type> parameters(problemSize);
+    auto result = initialOptima;
+    
+    std::function<void(int)> loop = [&](int index)
+    {
+      if (index == parameters.size() - 1)
+      {
+        for (auto i = searchSpace.left(); i <= searchSpace.right(); i += 0.01)
+        {
+          parameters[index] = i;
+          auto instResult = objectiveFunction(parameters);
+          if (costEvalFunction(result, instResult))
+          {
+            result = instResult;
+          }
+        }
+      }
+      else
+      {
+        for (auto i = searchSpace.left(); i <= searchSpace.right(); i += 0.01)
+        {
+          parameters[index] = i;
+          loop(index + 1);
+        }
+      }
+    };
+
+    loop(0);
+
+    return result;
+  }
+
+  namespace unitTest {
+    double iterativeMin();
+  }
 }
 
 #endif

@@ -1,7 +1,8 @@
 // implementation: Alin Stroe
 // mail to: afstroe@gmail.com
 // linkedin: https://www.linkedin.com/in/alinstroe/
-// purpose: generation of a random vector
+// purpose: generation of a random vector; various random numbers
+//          generation utilities;
 // Copyright © 2020 Alin Stroe, all rights reserved
 
 #ifndef __VECTOR_GENERATOR_H__

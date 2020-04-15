@@ -1,3 +1,10 @@
+// implementation: Alin Stroe
+// mail to: afstroe@gmail.com
+// linkedin: https://www.linkedin.com/in/alinstroe/
+// purpose: implementation of the adaptive random search algorithm
+// Copyright © 2020 Alin Stroe, all rights reserved
+
+
 #ifndef __ADAPTIVE_RANDOM_SEARCH_H__
 #define __ADAPTIVE_RANDOM_SEARCH_H__
 
@@ -194,7 +201,7 @@ namespace stochastic {
   }
 
   namespace unitTest {
-    void adaptiveRandomSearch();
+    double adaptiveRandomSearchMin();
   }
 
 }// namespace stochastic {

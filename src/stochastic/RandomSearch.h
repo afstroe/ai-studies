@@ -186,7 +186,8 @@ namespace stochastic
 		return optimal;
 	}
 
-
-	void randomSearchTest();
+	namespace unitTest {
+		double randomSearchMin();
+	}
 }
 #endif // !__RANDOM_SEARCH_H__
