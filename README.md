@@ -1,2 +1,6 @@
 # ai-studies
-A study of AI related algorithms.
+A C++ study of AI related algorithms.
+
+## Contents
+### Stochastic algorithms
+1. 
