@@ -1,0 +1,5 @@
+// Hint files help the Visual Studio IDE interpret Visual C++ identifiers
+// such as names of functions and macros.
+// For more information see https://go.microsoft.com/fwlink/?linkid=865984
+#define FOR(index, cap) for(auto index = 0; index < cap; ++index)
+#define DECLARE_PROTECTED_TRIVIAL_ATTRIBUTE_C(TYPE, NAME) protected: TYPE _##NAME; public: TYPE& NAME() { return _##NAME; } const TYPE& NAME() const { return _##NAME; }

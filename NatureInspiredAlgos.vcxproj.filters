@@ -30,6 +30,9 @@
     <ClCompile Include="src\iterative\IterativeMinMax.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\stochastic\hillClimbing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\iterative\IterativeMinMax.h">
@@ -53,5 +56,11 @@
     <ClInclude Include="src\statistics\benchmark.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\stochastic\hillClimbing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

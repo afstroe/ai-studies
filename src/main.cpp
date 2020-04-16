@@ -10,28 +10,19 @@
 #include "random_generators/vectorGenerator.h"
 #include "statistics/clock.h"
 #include "statistics/benchmark.h"
-
-static double randomSolution(const std::vector<double>& problemSpace)
-{
-  std::random_device randomDevice;
-  std::default_random_engine randomEngine(randomDevice());
-  std::uniform_int_distribution<> ud(0, static_cast<int>(problemSpace.size() - 1));
-  
-  auto pos = ud(randomEngine);
-
-  return problemSpace[pos];
-}
+#include "stochastic/hillClimbing.h"
 
 int main(int argc, TCHAR** a)
 {
-  auto r = iterative::unitTest::iterativeMin();
-
   randomGenerators::DefaultRandomEngine::get();
 
+  // stochastic::unitTest::climbHill();
+
   statistics::Benchmark benchmark;
-  benchmark.addAlgorithm(statistics::Benchmark::AlgorithmStatistics::AlgorithmStatistics(100, "RandomSearch", false, stochastic::unitTest::randomSearchMin));
-  benchmark.addAlgorithm(statistics::Benchmark::AlgorithmStatistics::AlgorithmStatistics(100, "AdaptiveRandomSearch", false, stochastic::unitTest::adaptiveRandomSearchMin));
-  benchmark.addAlgorithm(statistics::Benchmark::AlgorithmStatistics::AlgorithmStatistics(100, "Iterative", true, iterative::unitTest::iterativeMin));
+  //benchmark.addAlgorithm(statistics::Benchmark::AlgorithmStatistics::AlgorithmStatistics(100, "RandomSearch", false, stochastic::unitTest::randomSearchMin));
+  //benchmark.addAlgorithm(statistics::Benchmark::AlgorithmStatistics::AlgorithmStatistics(100, "AdaptiveRandomSearch", false, stochastic::unitTest::adaptiveRandomSearchMin));
+  //benchmark.addAlgorithm(statistics::Benchmark::AlgorithmStatistics::AlgorithmStatistics(100, "Iterative", true, iterative::unitTest::iterativeMin));
+  benchmark.addAlgorithm(statistics::Benchmark::AlgorithmStatistics::AlgorithmStatistics(100, "hillClimb", true, stochastic::unitTest::climbHill));
 
   benchmark.printResults();
 

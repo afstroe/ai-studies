@@ -162,11 +162,10 @@ namespace randomGenerators
     * \ingroup randomGenerators
     */
   template <class Type, class TypeType, template <class, class> class Container>
-  Container<Type, std::allocator<Type>> generateUniformRandomContainer(size_t size, Type min, Type max)
+  Container<TypeType, std::allocator<TypeType>> generateUniformRandomContainer(size_t size, Type min, Type max)
   {
     auto& randomEngine = DefaultRandomEngine::get();
-    Container<Type, std::allocator<Type>> vect;
-    // vect.clear();
+    Container<TypeType, std::allocator<TypeType>> vect;    
     vect.reserve(size);
     UniformDistributedGenerator<Type, TypeType> generate(min, max);
     for (int i = 0; i < size; ++i)
@@ -211,7 +210,7 @@ namespace randomGenerators
     * \ingroup randomGenerators
     */
   template <class Type, template <class, class> class Container, class TypeType = Type>
-  Container<Type, std::allocator<Type>> generateRandomVector(size_t size, Type min, Type max, Distribution distribution)
+  Container<TypeType, std::allocator<TypeType>> generateRandomVector(size_t size, Type min, Type max, Distribution distribution)
   {
     switch (distribution)
     {
