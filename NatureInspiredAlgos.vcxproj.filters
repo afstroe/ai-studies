@@ -1,63 +1,82 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Algorithms">
+      <UniqueIdentifier>{8f93cdc5-a90e-47d1-bcc1-f7a81bdd8023}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="Algorithms\Stochastic">
+      <UniqueIdentifier>{8fc99a51-b6c8-4fdb-8d7c-e2aacbf97a39}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Algorithms\Stochastic\RandomSearch">
+      <UniqueIdentifier>{d5e0073d-6ade-4065-bdd9-70548f2006b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Algorithms\Stochastic\HillClimbing">
+      <UniqueIdentifier>{ad952bb0-8200-478e-a054-ada791edc176}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{feca355b-33aa-45e7-8503-eaa2ab12886c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Algorithms\Iterative">
+      <UniqueIdentifier>{f3573056-7206-4590-ae85-796f2f472ef1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Problems">
+      <UniqueIdentifier>{42a28e36-49de-4ee3-905c-4881be985b47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Problems\tsp">
+      <UniqueIdentifier>{cd14b9d1-c6a8-4fc3-b025-422b4f4f14eb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\stochastic\AdaptiveRandomSearch.cpp">
+      <Filter>Algorithms\Stochastic\RandomSearch</Filter>
     </ClCompile>
     <ClCompile Include="src\stochastic\RandomSearch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\stochastic\AdaptiveRandomSearch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\statistics\benchmark.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\iterative\IterativeMinMax.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Algorithms\Stochastic\RandomSearch</Filter>
     </ClCompile>
     <ClCompile Include="src\stochastic\hillClimbing.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Algorithms\Stochastic\HillClimbing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\statistics\benchmark.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\iterative\IterativeMinMax.cpp">
+      <Filter>Algorithms\Iterative</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\problems\tsp\nearestNeighbour.cpp">
+      <Filter>Problems\tsp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\iterative\IterativeMinMax.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\stochastic\AdaptiveRandomSearch.h">
+      <Filter>Algorithms\Stochastic\RandomSearch</Filter>
     </ClInclude>
     <ClInclude Include="src\stochastic\RandomSearch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\random_generators\vectorGenerator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\statistics\clock.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\stochastic\AdaptiveRandomSearch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\utility\Defines.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\statistics\benchmark.h">
-      <Filter>Header Files</Filter>
+      <Filter>Algorithms\Stochastic\RandomSearch</Filter>
     </ClInclude>
     <ClInclude Include="src\stochastic\hillClimbing.h">
-      <Filter>Header Files</Filter>
+      <Filter>Algorithms\Stochastic\HillClimbing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\statistics\benchmark.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\statistics\clock.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utility\Defines.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\random_generators\vectorGenerator.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\iterative\IterativeMinMax.h">
+      <Filter>Algorithms\Iterative</Filter>
+    </ClInclude>
+    <ClInclude Include="src\problems\tsp\nearestNeighbour.h">
+      <Filter>Problems\tsp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\problems\tsp\Defines.h">
+      <Filter>Problems\tsp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

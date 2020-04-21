@@ -11,6 +11,7 @@
 #include "statistics/clock.h"
 #include "statistics/benchmark.h"
 #include "stochastic/hillClimbing.h"
+#include "problems/tsp/nearestNeighbour.h"
 
 int main(int argc, TCHAR** a)
 {
@@ -22,7 +23,37 @@ int main(int argc, TCHAR** a)
   //benchmark.addAlgorithm(statistics::Benchmark::AlgorithmStatistics::AlgorithmStatistics(100, "RandomSearch", false, stochastic::unitTest::randomSearchMin));
   //benchmark.addAlgorithm(statistics::Benchmark::AlgorithmStatistics::AlgorithmStatistics(100, "AdaptiveRandomSearch", false, stochastic::unitTest::adaptiveRandomSearchMin));
   //benchmark.addAlgorithm(statistics::Benchmark::AlgorithmStatistics::AlgorithmStatistics(100, "Iterative", true, iterative::unitTest::iterativeMin));
-  benchmark.addAlgorithm(statistics::Benchmark::AlgorithmStatistics::AlgorithmStatistics(100, "hillClimb", true, stochastic::unitTest::climbHill));
+  
+  
+  //benchmark.addAlgorithm(statistics::Benchmark::AlgorithmStatistics::AlgorithmStatistics(100, "hillClimb", true, stochastic::unitTest::climbHill));  
+
+  double tourDistance = 0;
+  double minTourDistance = std::numeric_limits<double>::max();
+  problems::tsp::TourArray tour;
+  problems::tsp::TourArray bestTour;
+  int bestTourIndex = 0;
+
+  FOR(i, problems::tsp::Berlin52.size())
+  {    
+    problems::tsp::nearestNeighbour(problems::tsp::Berlin52, i, tour, tourDistance);
+    if (tourDistance < minTourDistance)
+    {
+      minTourDistance = tourDistance;
+      bestTour = tour;
+      bestTourIndex = i;
+    }
+  }
+
+  //for (auto t : bestTour)
+  //{
+  //  std::cout << problems::tsp::Berlin52[t].x << std::endl;
+  //}
+  //std::cout << std::endl;
+  //for (auto t : bestTour)
+  //{
+  //  std::cout << problems::tsp::Berlin52[t].y << std::endl;
+  //}
+  //std::cout << std::endl;
 
   benchmark.printResults();
 
