@@ -20,7 +20,7 @@ void problems::tsp::reverseSegment(TourArray& tour, size_t startIndex, size_t en
 
 void problems::tsp::firstTwoOptMove(const Cities& cities, TourArray& tour)
 {
-  // we'll got munching at it until no more local optima is available
+  // we'll get munching at it until no more local optima is available
   auto locallyOptimal = false;
 
   while (!locallyOptimal)
