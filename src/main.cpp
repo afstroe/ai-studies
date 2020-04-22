@@ -44,6 +44,8 @@ int main(int argc, TCHAR** a)
     }
   }
 
+  problems::tsp::reverseSegment(bestTour, 49, 5);
+
   //for (auto t : bestTour)
   //{
   //  std::cout << problems::tsp::Berlin52[t].x << std::endl;

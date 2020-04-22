@@ -18,6 +18,8 @@ namespace problems {
       * \ingroup tsp
       */
     void nearestNeighbour(const Cities& cities, size_t startCity, TourArray& tour, double& tourDistance);
+
+    void reverseSegment(TourArray& tour, size_t startIndex, size_t endIndex);
   }
 }
 

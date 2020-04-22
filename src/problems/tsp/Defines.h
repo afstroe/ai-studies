@@ -2,6 +2,7 @@
 #define __TSP_DEFINES_H__
 
 #include <vector>
+#include <cmath>
 
 /*! \defgroup problems A collection of well known problems. */
 namespace problems {
