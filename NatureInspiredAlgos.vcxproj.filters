@@ -46,6 +46,7 @@
     <ClCompile Include="src\problems\tsp\nearestNeighbour.cpp">
       <Filter>Problems\tsp</Filter>
     </ClCompile>
+    <ClCompile Include="src\problems\tsp\twoOpt.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\stochastic\AdaptiveRandomSearch.h">
@@ -76,6 +77,9 @@
       <Filter>Problems\tsp</Filter>
     </ClInclude>
     <ClInclude Include="src\problems\tsp\Defines.h">
+      <Filter>Problems\tsp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\problems\tsp\twoOpt.h">
       <Filter>Problems\tsp</Filter>
     </ClInclude>
   </ItemGroup>

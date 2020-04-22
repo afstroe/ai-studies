@@ -12,6 +12,7 @@
 #include "statistics/benchmark.h"
 #include "stochastic/hillClimbing.h"
 #include "problems/tsp/nearestNeighbour.h"
+#include "problems/tsp/twoOpt.h"
 
 int main(int argc, TCHAR** a)
 {
@@ -44,18 +45,20 @@ int main(int argc, TCHAR** a)
     }
   }
 
-  problems::tsp::reverseSegment(bestTour, 49, 5);
+  problems::tsp::twoOptMove(problems::tsp::Berlin52, bestTour);
 
-  //for (auto t : bestTour)
-  //{
-  //  std::cout << problems::tsp::Berlin52[t].x << std::endl;
-  //}
-  //std::cout << std::endl;
-  //for (auto t : bestTour)
-  //{
-  //  std::cout << problems::tsp::Berlin52[t].y << std::endl;
-  //}
-  //std::cout << std::endl;
+  for (auto t : bestTour)
+  {
+    std::cout << problems::tsp::Berlin52[t].x << std::endl;
+  }
+  std::cout << std::endl;
+  for (auto t : bestTour)
+  {
+    std::cout << problems::tsp::Berlin52[t].y << std::endl;
+  }
+  std::cout << std::endl;
+
+  auto d = problems::tsp::tourLength(problems::tsp::Berlin52, bestTour);
 
   benchmark.printResults();
 

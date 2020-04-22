@@ -36,20 +36,3 @@ void problems::tsp::nearestNeighbour(const Cities& cities, size_t startCity, Tou
   tourDistance += distance(cities[tour[0]], cities[*tour.rbegin()]);
 }
 
-void problems::tsp::reverseSegment(TourArray& tour, size_t startIndex, size_t endIndex)
-{
-  const auto s = tour.size();
-
-  // account for the fact that tour is cyclic
-  auto halfIntervalSize = ((s + endIndex - startIndex + 1) % s) / 2;
-
-  int left = startIndex;
-  int right = endIndex;
-  
-  FOR(i, halfIntervalSize)
-  {
-    std::swap(tour[left], tour[right]);
-    left = ++left % s;
-    right = (s + right - 1) % s;
-  }
-}

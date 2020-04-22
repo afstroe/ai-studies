@@ -30,6 +30,7 @@
     <ClCompile Include="src\iterative\IterativeMinMax.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\problems\tsp\nearestNeighbour.cpp" />
+    <ClCompile Include="src\problems\tsp\twoOpt.cpp" />
     <ClCompile Include="src\statistics\benchmark.cpp" />
     <ClCompile Include="src\stochastic\AdaptiveRandomSearch.cpp" />
     <ClCompile Include="src\stochastic\hillClimbing.cpp" />
@@ -39,6 +40,7 @@
     <ClInclude Include="src\iterative\IterativeMinMax.h" />
     <ClInclude Include="src\problems\tsp\Defines.h" />
     <ClInclude Include="src\problems\tsp\nearestNeighbour.h" />
+    <ClInclude Include="src\problems\tsp\twoOpt.h" />
     <ClInclude Include="src\random_generators\vectorGenerator.h" />
     <ClInclude Include="src\statistics\benchmark.h" />
     <ClInclude Include="src\statistics\clock.h" />

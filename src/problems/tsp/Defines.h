@@ -36,6 +36,20 @@ namespace problems {
       const auto cy = city0.y - city1.y;
       return std::sqrt(cx * cx + cy * cy);
     }
+
+    inline double tourLength(const Cities& cities, const TourArray& tour)
+    {
+      const auto s = tour.size();
+      auto d = 0.0;
+      FOR(i, s)
+      {
+        const auto start = tour[i];
+        const auto end = tour[(i + 1) % s];
+        d += distance(cities[start], cities[end]);
+      }
+
+      return d;
+    }
   }
 }
 
